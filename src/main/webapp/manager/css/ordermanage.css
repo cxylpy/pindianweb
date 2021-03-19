@@ -1,0 +1,55 @@
+#navigation_list {
+	width: 100%;
+	float: left;
+	margin:0;
+}
+#navigation_list li {
+	width: 18.7%;
+	padding: 5px;
+	font-size: 0.8em;
+	border: none;
+}
+table {
+	width:100%;
+}
+a{
+	text-decoration:none;
+}
+td {
+	padding:10px 10px 10px 10px;
+}
+.order_info{
+	background-color:#D9D9D9;
+}
+.order_info *{
+	background-color:#D9D9D9;
+	
+}
+tr{
+	width:100%;
+}
+td.product_info {
+	padding-right:0;
+}
+.product_info img{
+	width:120px;
+	height:120px;
+	margin:10px;
+	margin-right:0;
+}
+td[colspan="5"] img{
+	width:20px;
+	height:20px;
+	float:left;
+	margin-right:5px;
+}
+.order_desc{
+	width:150px;
+}
+.red_button{
+	height:20px;
+	font-size:0.8em;
+}
+.order_detail{
+	text-decoration:none;
+}

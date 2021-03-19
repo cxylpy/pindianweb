@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Tue Sep 01 18:38:20 CST 2015
+genBasicCompId=false
+sessionFactoryName=
+profile=
+daoSFId=
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=/Pindian Maven Webapp/hibernate.reveng.xml
+configFile=/Pindian Maven Webapp/src/main/java/hibernate.cfg.xml
+createConfigFile=true

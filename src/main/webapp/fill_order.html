@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>请确认您的订单</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/fill_order.css"/>
+		<link rel="stylesheet" type="text/css" href="css/navigation.css"/>
+	</head>
+	<body>
+		<!--导航栏-->
+		<p class="navigation_user">
+			<a href="login.html">登陆</a><label>/</label><a href="register.html">免费注册</a>
+		</p>
+		<ul id="navigation_list">
+			<li class="navigation_left">
+				<a href="#">首页</a>
+			</li>
+			<li class="navigation_left">
+				<a href="#">个人中心</a>
+			</li>
+			<li class="navigation_right">
+				<a href="#">关于品点</a>
+			</li >
+			<li class="navigation_right">
+				<a href="#">联系品点</a>
+			</li>
+			<img src="images/logo.png" id="navigation_logo"/>
+		</ul>
+		<!--导航栏-->
+		<div class="container">
+			<p class="title">
+				填写并核对订单信息
+			</p>
+			<form>
+				<div class="order">
+					<div class="order_info">
+						<div>
+							<p class="subtitle">
+								收货人信息
+							</p>
+							<a href="#"class="new_address">新增收货地址</a>
+						</div>
+						<div class="addresses">
+							<label class="red_box">
+								<input name="address"type="radio" value="address"/>
+								<span>某某某　18883865089　重庆市邮电大学15栋</span></label>
+							<label class="red_box">
+								<input name="address"type="radio" value="address"/>
+								<span>某某某　18883865088　重庆市邮电大学14栋</span></label>
+							<label class="red_box">
+								<input name="address"type="radio" value="address"/>
+								<span>某某某　18883865087　重庆市邮电大学13栋</span></label>
+						</div>
+						<div class="dotted_line"></div>
+						<div>
+							<p class="subtitle">
+								支付方式
+							</p>
+						</div>
+						<div class="pay_types">
+							<label class="red_box">
+								<input name="pay_type"type="radio" value="pay_type"/>
+								<span>在线支付</span></label>
+							<label class="red_box">
+								<input name="pay_type"type="radio" value="pay_type"/>
+								<span>货到付款</span></label>
+						</div>
+						<div class="dotted_line"></div>
+						<div class="list_left">
+							<p class="subtitle">
+								送货清单
+							</p>
+							<p class="product_desc">
+								配送方式
+							</p>
+							<div class="transports">
+								<label class="red_box">
+									<input name="transport"type="radio" value="pay_type"/>
+									<span> 　　快递　　 </span></label>
+								<label class="red_box">
+									<input name="transport"type="radio" value="pay_type"/>
+									<span> 　上门自取　 </span></label>
+							</div>
+							<p class="product_desc">
+								运费：<label class="normal_price">￥10.00</label>
+							</p>
+						</div>
+						<div class="list_right">
+							<a href="#" class="new_address">返回修改商品</a>
+							<table class="buying_product">
+								<tr>
+									<td><img src="images/test1.jpg"/></td>
+									<td>
+									<p>
+										纪念画册
+									</p>
+									<p>
+										A4　　36页　　精装　　哑膜
+									</p></td>
+									<td>
+									<p class="normal_price">
+										￥888.00
+									</p></td>
+									<td>
+									<p>
+										X1
+									</p></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<p class="comment">给品点留言：</p>
+					<textarea name="comment"></textarea>
+					<table class="total_price_detail">
+						<tr>
+							<td>
+							<p>
+								<span class="red_color">1</span>件商品，总商品金额：
+							</p></td>
+							<td>
+							<p class="normal_price">
+								￥888.00
+							</p></td>
+						</tr>
+						<tr>
+							<td>
+							<p>
+								运费
+							</p></td>
+							<td>
+							<p class="normal_price">
+								￥10.00
+							</p></td>
+						</tr>
+						<tr>
+							<td>
+							<p>
+								应支付总金额
+							</p></td>
+							<td>
+							<p class="normal_price">
+								￥888.00
+							</p></td>
+						</tr>
+						<tr>
+							<td>
+							<input type="checkbox" />使用品点优惠：<select>
+										<option value="XXXX优惠券20元">XXXX优惠券20元</option>
+							</select>		
+							</td>
+							<td>
+								<p class="normal_price">
+									￥-888.0
+								</p>
+							</td>					
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" />使用品点积分：
+								<input type="text" class="number_input"/>点
+								<span>可使用***点</span>
+							</td>
+							<td>
+								<p class="normal_price">
+									￥-0.54
+								</p>
+							</td>
+						</tr>
+					</table>
+					<div class="dotted_line"></div>
+					<p class="total_price">
+						应付总额：<span class="large_price">￥898.00</span>
+						<br />
+					<span class="get_bonus">可获得品点积分：***</span>
+						
+					</p>
+					<input type="submit" value="提交订单"/>
+				</div>
+			</form>
+			<p class="receive_address">
+				寄送至：重庆南岸区龙门浩街道金桂圆A栋3楼115室
+				<br/>
+				收货人：某某某     18983941392
+			</p>
+		</div>
+	</body>
+</html>
+

@@ -1,0 +1,47 @@
+.toptitle {
+	cursor:pointer;
+	display:block;
+	float:left;
+	margin-left:31px;
+	margin-right:31px;
+	margin-top:50px;
+	text-align:center;
+	line-height:60px;
+}
+.toptitle input{
+	display:none;
+}
+.toptitle input+span{
+	background-color:#282f35;
+	width:450px;
+	height:60px;
+	color:white;
+	font-size:1.5em;
+	display:block;
+}
+.toptitle input:checked+span{
+	background-color:#da251c;
+}
+.sumblock{
+	color:black;
+	margin-top:20px;
+	background-color:white;
+	display:block;
+	float:left;
+	width:450px;
+	height:450px;
+	margin-left:31px;
+	margin-right:31px;
+}
+.sumblock img{
+	width:350px;
+	height:350px;
+	margin:10px 50px 25px 50px;
+}
+.sumblock p{
+	margin:10px;
+	font-size:1.5em;
+}
+.title{
+	text-align:center;	
+}

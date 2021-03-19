@@ -1,0 +1,126 @@
+$(function() {
+	$(".black_price").each(function() {
+		$(this).text("￥"+formatFloat(parseFloat($(this).text())));
+	});
+	calc();
+	$("input[type=text]").keyup(function() {
+		modifyInput($(this));
+		calc();
+	});
+	$("input[type=checkbox]").click(function() {
+		calc();
+	});
+	$("#selectAll").click(function() {
+		if($(this).prop("checked")) {
+			$("input[type=checkbox]").prop("checked",true);
+		} else {
+			$("input[type=checkbox]").prop("checked",false);
+		}
+		calc();
+	});
+});
+
+function calc() {
+	var total = 0;
+	var checkNum = 0;
+	$(".buying_product").each(function() {
+		var thisPrice = $(this).children("td:nth-child(3)").text().substring(1);
+		var thisNumber = $(this).children("td:nth-child(4)").children().val();
+		var totalPrice = accMul(parseFloat(thisPrice),parseFloat(thisNumber));
+		$(this).children("td:nth-child(5)").children().text("￥"+formatFloat(totalPrice));
+		if($(this).children("td").children("input").prop("checked")) {
+			checkNum++;
+			total = accAdd(total,totalPrice);
+		}
+	});
+	$("#total").text("￥"+formatFloat(total));
+	$("#num").text(checkNum);
+}
+
+function modifyInput(obj) {
+	var numStr = obj.val().replace(/[\u4e00-\u9fa5_a-zA-Z \-~`!@#\$%\^&\*\(\)\+=\}\{\[\]。，？、:;"'\.,\/?\<\>《》￥‘“：；【】]/g,"");
+	obj.val(numStr);
+	if(parseInt(obj.val())<1)
+		obj.val(1);
+	if(obj.val()=="")
+		obj.val(1);
+}
+
+
+
+/**
+ ** 加法函数，用来得到精确的加法结果
+ ** 说明：javascript的加法结果会有误差，在两个浮点数相加的时候会比较明显。这个函数返回较为精确的加法结果。
+ ** 调用：accAdd(arg1,arg2)
+ ** 返回值：arg1加上arg2的精确结果
+ **/
+function accAdd(arg1, arg2) {
+    var r1, r2, m, c;
+    try {
+        r1 = arg1.toString().split(".")[1].length;
+    }
+    catch (e) {
+        r1 = 0;
+    }
+    try {
+        r2 = arg2.toString().split(".")[1].length;
+    }
+    catch (e) {
+        r2 = 0;
+    }
+    c = Math.abs(r1 - r2);
+    m = Math.pow(10, Math.max(r1, r2));
+    if (c > 0) {
+        var cm = Math.pow(10, c);
+        if (r1 > r2) {
+            arg1 = Number(arg1.toString().replace(".", ""));
+            arg2 = Number(arg2.toString().replace(".", "")) * cm;
+        } else {
+            arg1 = Number(arg1.toString().replace(".", "")) * cm;
+            arg2 = Number(arg2.toString().replace(".", ""));
+        }
+    } else {
+        arg1 = Number(arg1.toString().replace(".", ""));
+        arg2 = Number(arg2.toString().replace(".", ""));
+    }
+    return (arg1 + arg2) / m;
+}
+
+function formatFloat(floatvar){ 
+    var f_x = parseFloat(floatvar); 
+    if (isNaN(f_x)){ 
+        return '0.00'; 
+    } 
+    var f_x = Math.round(f_x*100)/100; 
+    var s_x = f_x.toString(); 
+    var pos_decimal = s_x.indexOf('.'); 
+    if (pos_decimal < 0){ 
+        pos_decimal = s_x.length; 
+        s_x += '.'; 
+    } 
+    while (s_x.length <= pos_decimal + 2){ 
+        s_x += '0'; 
+    } 
+    return s_x; 
+}
+
+//给Number类型增加一个add方法，调用起来更加方便。
+Number.prototype.add = function (arg) {
+    return accAdd(arg, this);
+};
+
+//乘法函数，用来得到精确的乘法结果
+//说明：javascript的乘法结果会有误差，在两个浮点数相乘的时候会比较明显。这个函数返回较为精确的乘法结果。
+//调用：accMul(arg1,arg2)
+//返回值：arg1乘以arg2的精确结果
+function accMul(arg1,arg2)
+{
+var m=0,s1=arg1.toString(),s2=arg2.toString();
+try{m+=s1.split(".")[1].length}catch(e){}
+try{m+=s2.split(".")[1].length}catch(e){}
+return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m)
+}
+//给Number类型增加一个mul方法，调用起来更加方便。
+Number.prototype.mul = function (arg){
+return accMul(arg, this);
+}

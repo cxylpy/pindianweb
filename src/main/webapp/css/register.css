@@ -1,0 +1,79 @@
+*{
+	margin:0 auto;
+	padding:0;
+}
+body {
+	background-image: url("../images/register_background.png");
+	background-size: cover;
+	background-repeat: repeat-x;
+}
+form {
+	background-color:#282f35;
+	width:40%;
+	padding-top:3%;
+	padding-bottom:3%;
+	margin-top:2%;
+}
+p {
+	color:#abacac;
+	font-size:1.1em;
+}
+input[type="text"],input[type="password"]{
+	background-color:#1f262c;
+	border:none;
+	vertical-align:middle;
+	font-size:1.5em;
+	text-align:left;
+	color:white;
+	margin-top:-5px;
+	margin-bottom:5px;
+	width:250px;
+}
+td.box{
+	background-color:#1f262c;
+	padding:5px;
+	padding-bottom:0;
+}
+table{
+	text-align: left;
+}
+#validator{
+	width:50%;
+	height:40px;
+	margin-top:10px;
+}
+td a{
+	text-decoration: none;
+	color:#4c5155;
+	width:25%;
+	display:block;
+	font-size:0.8em;
+	margin-left:220px;
+	text-align:center;
+	margin-top:-47px;
+	background-color:#d8d8d8;
+}
+input[type="submit"] {
+	border-radius: 5px;
+	background-color:#da251c;
+	color:#470300;
+	padding:10px;
+	font-weight:900;	
+	font-size:1.5em;
+	height:50px;
+	text-align:center;
+	vertical-align: middle;
+	display:block;
+	float:left;
+	margin-left:100px;
+	margin-top:20px;
+}
+.message *{
+	color:#b12627;
+	font-size:0.7em;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	form{
+		padding-left:30px;
+	}
+}

@@ -1,0 +1,171 @@
+.large_text{
+	font-size:1.6em;
+	font-weight: 700;
+	display:block;
+	text-align:center;
+	vertical-align: middle;
+	height:35px;
+	float:left;
+	width:100%;
+	line-height:35px;
+}
+.large_text_light{
+	color:#282f35;
+}
+.large_text_dark{
+	color:#c92620;
+}
+.moto{
+	margin-top:70px;
+	letter-spacing: 0.5em;
+}
+.moto_english{
+	margin-top:5px;
+}
+.small_text{
+	float:left;
+	width:100%;
+	text-align:center;
+	vertical-align: middle;
+	height:20px;
+	font-size:0.8em;
+	line-height:20px;
+	letter-spacing:2px;
+}
+.small_text_dark{
+	color:#d0d1d1;
+}
+.small_text_light{
+	color:#3c4146;
+}
+.light, .light p, .light img, .light li{
+	display:block;
+	background-color:#d9d9d9;
+}
+.dark, .dark p, .dark img, .dark li{
+	display:block;
+	background-color:#282f35;
+}
+.introduction{
+	text-align:center;
+	padding-left:10%;
+	padding-right:10%;
+	float:left;
+}
+
+.introduction img{
+	width:30%;
+}
+.introduction ul{
+	
+	text-align:center;
+	display:block;
+	float:left;
+	margin-top:50px;
+}
+.three_element ul{
+	width:33%;
+} 
+.four_element ul{
+	width:25%;
+}
+.introduction li{
+	list-style: none;
+}
+.description{
+	margin-top:50px;
+	text-align:center;
+	width:100%;
+	display:block;
+	float:left;
+	font-size:0.9em;
+	margin-bottom:30px;
+}
+.description_light{
+	color:#282f35;
+}
+.description_dark{
+	color:#d9d9d9;
+}
+.confidence_block{
+	display:block;
+	float:left;
+	width:25%;
+	height:90px;
+	margin:20px;
+	padding:20px;
+	background-color:white;
+}
+.confidence_block img{
+	width:25%;
+	display:block;
+	float:left;
+	background-color:white;
+}
+p.title{
+	background-color:white;
+	color:#282f35;
+	font-weight:800;
+	font-size:1.3em;
+}
+p.content{
+	font-size:0.75em;
+	line-height:1.8em;
+	background-color:white;
+}
+.left_arrow, .right_arrow{
+	margin-top:20%;
+	position: absolute;
+	z-index:2;
+	cursor:pointer;
+}
+.left_arrow{
+	float:left;
+	display:block;
+	margin-left:5%;
+}
+.right_arrow{
+	display:block;
+	margin-left:90%;
+}
+.banner{
+	overflow:hidden;
+	width:100%;
+}
+.indicator{
+	margin-left:45%;
+	cursor:pointer;
+	position: absolute;
+	z-index:2;
+	margin-top:30%;
+}
+.banners {
+	width:500%;
+	height:100%;
+	float:left;
+	overflow:hidden;
+}
+.banners img{
+	width:20%;
+	display:block;
+	float:left;
+	height:100%;
+	
+}
+input[name=indicators]{
+	display:none;
+}
+input[name=indicators]+span {
+	cursor:pointer;
+	display:inline-block;
+	background-image:url("../images/dot_select.png");
+	background-size:cover;
+	width:8px;
+	margin-left:5px;
+	margin-right:5px;
+	height:8px;
+	background-repeat:no-repeat;
+}
+input[name=indicators]:checked+span {
+	background-image:url("../images/dot_selected.png");
+}

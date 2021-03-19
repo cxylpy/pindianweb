@@ -1,0 +1,42 @@
+body{
+	color:#282f35;
+}
+#map{
+	width:100%;
+	height:300px;
+	float:left;
+	margin-top:60px;
+	margin-bottom:50px;
+}
+#left{
+	width:500px;
+	float:left;
+	margin-left:100px;
+	margin-bottom:100px;
+}
+#right{
+	width:250px;
+	margin-right:100px;
+	float:right;
+	margin-bottom:100px;
+}
+h3{
+	color:#da251c;
+	margin-top:30px;
+}
+.fillinfotext{
+	width:248px;
+	font-size:1.5em;
+	background-color:#d9d9d9;
+	border:1px solid #9f9f9f;
+}
+#right textarea{
+	font-size:1.5em;
+	background-color:#d9d9d9;
+	border:1px solid #9f9f9f;
+	width:248px;
+	height:100px;
+}
+#right input[type=submit]{
+	margin-top:20px;
+}

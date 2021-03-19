@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="3.41" errors="0" skipped="0" tests="1" name="test.DaoTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\work_and_study\Java\jdk1.7.0_51\jre\bin"/>
+    <property name="java.vm.version" value="24.51-b03"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="$M2_HOME"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\workplace\myEclipse\pindian Maven Webapp"/>
+    <property name="java.runtime.version" value="1.7.0_51-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\work_and_study\Java\jdk1.7.0_51\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="D:\Users\Lonphy\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\workplace\myEclipse\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8937237008902107160.tmp"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="C:\work_and_study\Java\jdk1.7.0_51\bin;D:\windows\Sun\Java\bin;D:\windows\system32;D:\windows;C:\python\;C:\python\Scripts;D:\Program Files (x86)\Common Files\NetSarang;D:\Program Files (x86)\AMD APP\bin\x86_64;D:\Program Files (x86)\AMD APP\bin\x86;D:\windows\system32;D:\windows;D:\windows\System32\Wbem;D:\windows\System32\WindowsPowerShell\v1.0\;D:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\work_and_study\matlab\bin\win32;C:\work_and_study\MySql5.0\bin;C:\work_and_study\Subversion\bin;C:\work_and_study\rational_rose\common;C:\work_and_study\VC6.0\Tools\WinNT;C:\work_and_study\VC6.0\MSDev98\Bin;C:\work_and_study\VC6.0\Tools;C:\work_and_study\VC98\bin;D:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;D:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;D:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;D:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\work_and_study\Java\jdk1.7.0_51\bin;C:\work_and_study\adt-bundle-windows-x86_64-20140624\adt-bundle-windows-x86_64-20140624\sdk\platform-tools;C:\work_and_study\MySql5.0\bin;C:\work_and_study\apachetomcat\tomcat6\bin;C:\work_and_study\vmware;E:\apache\apache-maven-3.3.3-bin\apache-maven-3.3.3\bin;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="D:\Users\Lonphy"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Lonphy"/>
+    <property name="java.class.path" value="E:\apache\apache-maven-3.3.3-bin\apache-maven-3.3.3\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\work_and_study\Java\jdk1.7.0_51\jre"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -B -s D:\Users\Lonphy\.m2\settings.xml test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_51"/>
+    <property name="java.ext.dirs" value="C:\work_and_study\Java\jdk1.7.0_51\jre\lib\ext;D:\windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\work_and_study\Java\jdk1.7.0_51\jre\lib\resources.jar;C:\work_and_study\Java\jdk1.7.0_51\jre\lib\rt.jar;C:\work_and_study\Java\jdk1.7.0_51\jre\lib\sunrsasign.jar;C:\work_and_study\Java\jdk1.7.0_51\jre\lib\jsse.jar;C:\work_and_study\Java\jdk1.7.0_51\jre\lib\jce.jar;C:\work_and_study\Java\jdk1.7.0_51\jre\lib\charsets.jar;C:\work_and_study\Java\jdk1.7.0_51\jre\lib\jfr.jar;C:\work_and_study\Java\jdk1.7.0_51\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="E:\apache\apache-maven-3.3.3-bin\apache-maven-3.3.3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="maven.bootclasspath" value="E:\apache\apache-maven-3.3.3-bin\apache-maven-3.3.3\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="3.41" classname="test.DaoTest" name="testSave"/>
+</testsuite>

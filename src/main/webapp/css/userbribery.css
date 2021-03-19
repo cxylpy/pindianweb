@@ -1,0 +1,54 @@
+.briberyblock{
+	width:395px;
+	height:350px;
+	background-color:white;
+	display:block;
+	float:left;
+	margin-left:5px;
+	margin-bottom:10px;
+}
+.bagblock{
+	width:200px;
+	float:left;
+	height:330px;
+	margin-left:10px;
+	background-image:url("../images/briberybg.png");
+}
+.bagblock *{
+	margin:0 auto;	
+	text-align:center;
+}
+.bagblock img{
+	margin-left:55px;
+	margin-top:20px;
+}
+.briberyname{
+	margin-top:115px;
+	margin-left:-15px;
+	color:white;
+	font-size:1.4em;
+}
+.briberysum{
+	color:white;
+	text-align:center;
+	margin-top:40px;
+	margin-left:-15px;
+}
+.briberysum span{
+	color:#ffea00;
+	font-size:1.4em;
+}
+.briberyblock table{
+	margin-top:30px;
+	text-align:center;
+}
+.briberyblock td{
+	padding:5px;
+}
+.briberydesc {
+	font-size:1.3em;
+}
+.normal_price{
+	font-weight:600;
+	font-size:1.5em;
+}

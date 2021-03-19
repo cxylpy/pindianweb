@@ -1,0 +1,133 @@
+
+.container {
+	width: 1024px;
+}
+*{
+	font-family:"微软雅黑"; 
+	margin:0 auto;
+	padding: 0;
+}
+a img{
+	border:none;
+}
+body {
+	min-width:1320px;
+	background: #d9d9d9;
+}
+.red_box {
+	background-color: white;
+	display: block;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 30px;
+	cursor: pointer;
+	background: none;
+}
+.red_box input {
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+.red_box input:checked+ span {
+	border: 3px solid red;
+}
+.red_box span {
+	text-align: center;
+	height: 1.5em;
+	padding-left: 1em;
+	padding-right: 1em;
+	color: black;
+	display: inline-block;
+	background-color: white;
+	border-radius: 2px;
+	border: 3px solid gray;
+}
+.number_input {
+	background-color: white;
+	width: 3em;
+	text-align: center;
+	font-size: 1.3em;
+	margin-left:20px;
+}
+.red_box {
+	float: left;
+}
+.dotted_line {
+	display: block;
+	width: 530px;
+	height: 5px;
+	background-image: url("../images/dotted_line.png");
+	margin-top: 10px;
+	clear:left;
+}
+.normal_price {
+	color: #da251c;
+	font-size: 1.1em;
+}
+.dotted_checkbox{
+	float:left;
+	display:block;
+	clear:left;
+	cursor:pointer;
+	color:#094BA4;
+	margin-top:5px;
+}
+.dotted_checkbox input{
+	opacity: 0;
+	z-index: 1;
+	position: absolute;
+}
+.dotted_checkbox span{
+	font-size:1em;
+	background:url("../images/dot_normal.png");
+	background-repeat: no-repeat;
+}
+.dotted_checkbox input:checked+span{
+	background:url("../images/dot_checked.png");
+	background-repeat: no-repeat;
+}
+.red_color{
+	font-size:1.3em;
+	color:#C92620;
+}
+input[type=submit], .red_button{
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:5px;
+	padding-bottom:5px;
+	height:30px;
+	background:#DA251C;
+	border: none;
+	cursor:pointer;
+	color:white;
+	font-size:1.1em;
+	font-weight:700;
+	text-align:center;
+	display:block;
+	float:right;
+	clear:left;
+}
+.large_price {
+	color: #da251c;
+	font-size: 1.7em;
+	font-weight: 900;
+}
+.red_line{
+	background-color:#DA251C;
+	height:5px;
+	width:100%;
+}
+.background_gray_line{
+	background-color:#d9d9d9;
+	height:5px;
+	width:100%;
+	
+}
+.blue_color{
+	color:#094BA4;
+	text-decoration: none;
+}
+.gray_color{
+	color:#979797;
+	text-decoration: none;
+}

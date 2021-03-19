@@ -1,0 +1,74 @@
+*{
+	margin:0 auto;
+	padding:0;
+}
+a img{
+	border:none;	
+}
+.container{
+	width:1024px;
+	text-align:center;
+}
+.light_gray_line {
+	background-color:#d4d4d4;
+	height:2px;
+	width:100%;
+	border:none;
+	display:block;
+	float:left;
+}
+.red_line{
+	background-color:#DA251C;
+	height:5px;
+	width:100%;
+	float:left;
+}
+.sub_container {
+	width:797px;
+	background-color:#d9d9d9;
+}
+input[type=submit], .red_button{
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:5px;
+	padding-bottom:5px;
+	height:30px;
+	background:#DA251C;
+	border: none;
+	cursor:pointer;
+	color:white;
+	font-size:1.1em;
+	font-weight:700;
+	text-align:center;
+	display:block;
+	float:right;
+	clear:left;
+}
+.sub_title {
+	margin-top:5px;
+	margin-left:10px;
+	font-size:0.7em;
+}
+.sub_title a {
+	text-decoration: none;
+	color: black;
+}
+.sub_title a:hover {
+	color: #da251c;
+}
+input[name=weight]{
+	width:50px;
+}
+.product_img{
+	width:50px;
+	height:50px;
+}
+table{
+	width:100%;
+}
+td{
+	padding:3px;
+}
+a{
+	text-decoration:none;
+}

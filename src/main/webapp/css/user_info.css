@@ -1,0 +1,112 @@
+.summary_info{
+	float:left;
+	padding:20px;
+}
+.user_info{
+	background-color:white;
+	float:left;
+	padding:20px;
+	width:760px;
+}
+.user_info img{
+	float:left;
+}
+.user_info * {
+	background-color:white;
+}
+.user_account{
+	font-size:1.2em;
+	font-weight:700;
+}
+.summary_info p+p{
+	letter-spacing: 3px;
+	margin-top:10px;
+}
+.full_progess{
+	background-color:#282f35;
+	width:200px;
+	height:25px;
+	margin-top:10px;
+}
+.main_progress{
+	background-color:#DA251C;
+	width:30px;
+	/*204*/
+	height:25px;
+	float:left;
+}
+.main_progress p{
+	background:none;
+	color:white;
+	text-align:center;
+	width:200px;
+}
+.full_progess a{
+	text-decoration:none;
+	color:#094BA4;
+	font-size:1.2em;
+	padding-left:20px;
+	display:block;
+	float:right;
+	background-color:white;
+}
+form{
+	display:block;
+	float:left;
+	width:100%;
+	background-color:white;
+	padding-bottom:30px;
+}
+table{
+	display:block;
+	float:left;
+	margin-left:20px;
+	text-align:left;
+	border-spacing: 10px;
+}
+input{
+	background-color:#d9d9d9;
+	border:none;
+	font-size:1.4em;
+}
+input[name=telephone],input[name=districtNum]{
+	width:50px;
+}
+input[name=telephone]{
+	width:130px;
+}
+select{
+	background-color:#d9d9d9;
+	width:80px;
+	font-size:1.3em;
+}
+input[type=submit]{
+	width:100px;
+	height:30px;
+	background:#DA251C;
+	border: none;
+	cursor:pointer;
+	color:white;
+	font-size:1.1em;
+	font-weight:700;
+	text-align:center;
+	display:block;
+	float:right;
+	clear:left;
+}
+input[type=reset]{
+	margin-right:20px;
+	margin-left:20px;
+	cursor:pointer;
+	clear:left;
+	width:100px;
+	height:30px;
+	color:#094BA4;
+	font-size:1.1em;
+	font-weight:700;
+	display:block;
+	float:right;
+	background:white;
+	border:none;
+}
+

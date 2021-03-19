@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>autologin</filter-name>
+  	<filter-class>com.pindian.lonphy.interceptor.AutoLoginInterceptor</filter-class>
+  </filter>
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>autologin</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>JsonResultServlet</servlet-name>
+    <servlet-class>com.pindian.lonphy.web.JsonResultServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ErrorResultServlet</servlet-name>
+    <servlet-class>com.pindian.lonphy.web.ErrorResultServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>com.pindian.lonphy.web.ImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DocServlet</servlet-name>
+    <servlet-class>com.pindian.lonphy.web.DocServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FileServlet</servlet-name>
+    <servlet-class>com.pindian.lonphy.web.FileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MiddleServlet</servlet-name>
+    <servlet-class>com.pindian.lonphy.web.MiddleServlet</servlet-class>
+  </servlet>
+
+
+  <welcome-file-list>
+    <welcome-file>/entrance.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet-mapping>
+    <servlet-name>JsonResultServlet</servlet-name>
+    <url-pattern>/servlet/JsonResultServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ErrorResultServlet</servlet-name>
+    <url-pattern>/servlet/ErrorResultServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/servlet/ImageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DocServlet</servlet-name>
+    <url-pattern>/servlet/DocServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileServlet</servlet-name>
+    <url-pattern>/servlet/FileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MiddleServlet</servlet-name>
+    <url-pattern>/servlet/MiddleServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

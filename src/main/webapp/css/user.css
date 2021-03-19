@@ -1,0 +1,85 @@
+.navigation_user{
+	margin-top:20px;
+}
+#navigation_list {
+	margin-top: 50px;
+	float: left;
+	width: 100%;
+	border-bottom: solid 5px #da251c;
+	background-color: #282f35;
+}
+.navigation_right {
+	display: block;
+	float: right;
+	margin-right: 10%;
+}
+.navigation_left {
+	margin-left: 10%;
+	display: block;
+	float: left;
+	font-size: 1.2em;
+}
+#navigation_list a {
+	color: white;
+	text-align: center;
+	display: block;
+	vertical-align: middle;
+	background-color: #282f35;
+	height: 35px;
+	line-height: 35px;
+	display: block;
+}
+#navigation_list a {
+	background-color: #282f35;
+	text-decoration: none;
+	color: white;
+}
+#navigation_list a:hover {
+	color: #da251c;
+}
+li {
+	list-style: none;
+}
+.side_navigation {
+	background-color: #282F35;
+	display: block;
+	float: left;
+	padding: 20px;
+	color: white;
+	margin-top: 30px;
+}
+.main_title {
+	background-color: #282F35;
+	font-size:1.3em;
+	margin-top:15px;
+	font-weight:600;
+}
+.main_title ul{
+	background-color: #282F35;
+}
+.sub_title {
+	margin-top:5px;
+	margin-left:10px;
+	font-size:0.7em;
+	background-color: #282F35;
+}
+.sub_title a {
+	text-decoration: none;
+	background-color: #282F35;
+	color: white;
+}
+.sub_title a:hover,.selectedTitle {
+	color: #da251c;
+}
+.right_container{
+	width:800px;
+	height:500px;
+	margin-top:60px;
+	margin-left:30px;	
+	float:right;
+	border:none;
+}
+.paystandard{
+	width:800px;
+	padding-bottom:50px;
+}

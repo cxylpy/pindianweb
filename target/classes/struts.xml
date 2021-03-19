@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest"
+		name="requestParser" class="org.apache.struts2.dispatcher.multipart.JakartaMultiPartRequest"
+		scope="default" />
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.multipart.handler" value="requestParser" />
+
+	<constant name="struts.multipart.maxSize" value="104857600"></constant>
+
+	<package name="parent" extends="struts-default">
+		<interceptors>
+			<interceptor name="LoginInterceptor"
+				class="com.pindian.lonphy.interceptor.LoginInterceptor"></interceptor>
+			<interceptor name="ManagerInterceptor"
+				class="com.pindian.lonphy.interceptor.ManagerInterceptor"></interceptor>
+			<interceptor-stack name="defaultWithLogin">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="LoginInterceptor"></interceptor-ref>
+			</interceptor-stack>
+			<interceptor-stack name="defaultManager">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="ManagerInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<global-results>
+			<result name="error">/servlet/ErrorResultServlet</result>
+			<result name="loginfirst">/loginfirst.jsp</result>
+			<result name="manager_login">/manager/index.jsp</result>
+			<result name="no_privilege">/manager/noprivilge.jsp</result>
+			<result name="input">/input.jsp</result>
+		</global-results>
+		<action name="jsp_*" method="execute"
+			class="com.pindian.lonphy.action.CartAction">
+			<result name="success">/WEB-INF/user/{1}.jsp</result>
+		</action>
+	</package>
+	<package name="index" namespace="/index" extends="parent">
+		<action name="showIndex" method="showIndex"
+			class="com.pindian.lonphy.action.ProductAction">
+			<result name="success">/WEB-INF/user/index.jsp</result>
+		</action>
+	</package>
+	<package name="user" namespace="/user" extends="parent">
+		<action name="hasRegister" class="com.pindian.lonphy.action.UserAction"
+			method="hasRegister">
+			<result name="success">/servlet/JsonResultServlet</result>
+		</action>
+		<action name="getSms" class="com.pindian.lonphy.action.UserAction"
+			method="getSmsValidation">
+			<result name="success">/servlet/JsonResultServlet</result>
+		</action>
+		<action name="register" class="com.pindian.lonphy.action.UserAction"
+			method="register">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showIndex</param>
+				<param name="namespace">/index</param>
+			</result>
+			<result name="error">/register.jsp</result>
+		</action>
+		<action name="login" class="com.pindian.lonphy.action.UserAction"
+			method="login">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showIndex</param>
+				<param name="namespace">/index</param>
+			</result>
+			<result name="error" type="dispatcher">/login.jsp</result>
+		</action>
+		<action name="logout" class="com.pindian.lonphy.action.UserAction"
+			method="logout">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success" type="redirectAction">
+				<param name="actionName">showIndex</param>
+				<param name="namespace">/index</param>
+			</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="saveUserInfo" class="com.pindian.lonphy.action.UserAction"
+			method="saveUserInfo">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/userdata.jsp
+			</result>
+		</action>
+		<action name="modifyAddressView" class="com.pindian.lonphy.action.AddressAction"
+			method="modifyAddressView">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/useraddressmodify.jsp</result>
+		</action>
+		<action name="newAddressView" class="com.pindian.lonphy.action.AddressAction"
+			method="newAddressView">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/useraddressnew.jsp</result>
+		</action>
+		<action name="getBounsHistory" class="com.pindian.lonphy.action.UserAction"
+			method="getBounsHistory">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/userbonus.jsp</result>
+		</action>
+		<action name="getBriberys" class="com.pindian.lonphy.action.UserAction"
+			method="getBriberys">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/userbriberys.jsp</result>
+		</action>
+		<action name="getBriberyView" class="com.pindian.lonphy.action.UserAction"
+			method="getBriberyView">
+			<result name="success">/WEB-INF/user/getbriberyconfirm.jsp</result>
+		</action>
+		<action name="getA4View" class="com.pindian.lonphy.action.UserAction"
+			method="getA4View">
+			<result name="success">/WEB-INF/user/geta4confirm.jsp</result>
+		</action>
+		<action name="getA4Gift" class="com.pindian.lonphy.action.UserAction"
+			method="getA4Gift">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/geta4success.jsp</result>
+			<result name="fail">/WEB-INF/user/getbriberyfail.jsp</result>
+		</action>
+		<action name="getBriberyGift" class="com.pindian.lonphy.action.UserAction"
+			method="getBriberyGift">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/getbriberysuccess.jsp</result>
+			<result name="fail">/WEB-INF/user/getbriberyfail.jsp</result>
+		</action>
+	</package>
+	<package name="manager" namespace="/manager" extends="parent">
+		<default-interceptor-ref name="defaultManager"></default-interceptor-ref>
+		<action name="getManagerAllOrders" method="getManagerAllOrders"
+			class="com.pindian.lonphy.action.OrdersAction">
+			<result name="success">/WEB-INF/manager/ordermanage.jsp</result>
+		</action>
+		<action name="login" class="com.pindian.lonphy.action.ManagerAction"
+			method="login">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/manager/addProduct.jsp</result>
+			<result name="input">/WEB-INF/manager/index.jsp</result>
+		</action>
+		<action name="addProduct" class="com.pindian.lonphy.action.ProductAction"
+			method="addProduct">
+			<result name="success">/WEB-INF/manager/addProduct.jsp</result>
+			<result name="input">/WEB-INF/manager/addProduct.jsp</result>
+		</action>
+		<action name="addBribery" class="com.pindian.lonphy.action.BriberyMoneyAction"
+			method="addBribery">
+			<result name="success" type="redirectAction">showAllBribery</result>
+		</action>
+		<action name="showAllBribery" class="com.pindian.lonphy.action.BriberyMoneyAction"
+			method="showAll">
+			<result name="success">/WEB-INF/manager/manageBribery.jsp</result>
+		</action>
+		<action name="addA4package" class="com.pindian.lonphy.action.A4packageAction"
+			method="addA4package">
+			<result name="success" type="redirectAction">showAllA4package</result>
+		</action>
+		<action name="showAllA4package" class="com.pindian.lonphy.action.A4packageAction"
+			method="showAllA4package">
+			<result name="success">/WEB-INF/manager/manageA4package.jsp</result>
+		</action>
+		<action name="modifyA4packageView" class="com.pindian.lonphy.action.A4packageAction"
+			method="modifyA4packageView">
+			<result name="success">/WEB-INF/manager/modifya4package.jsp</result>
+		</action>
+		<action name="modifyA4package" class="com.pindian.lonphy.action.A4packageAction"
+			method="modifyA4package">
+			<result name="success" type="redirectAction">showAllA4package</result>
+		</action>
+		<action name="modifyBriberyView" class="com.pindian.lonphy.action.BriberyMoneyAction"
+			method="modifyBriberyView">
+			<result name="success">/WEB-INF/manager/modifybribery.jsp</result>
+		</action>
+		<action name="modifyBribery" class="com.pindian.lonphy.action.BriberyMoneyAction"
+			method="modifyBribery">
+			<result name="success" type="redirectAction">showAllBribery</result>
+		</action>
+		<action name="saveGlobalSettings" class="com.pindian.lonphy.action.GlobalSettingsAction"
+			method="update">
+			<result name="success" type="redirectAction">showGlobalSettings</result>
+		</action>
+		<action name="showGlobalSettings" class="com.pindian.lonphy.action.GlobalSettingsAction"
+			method="show">
+			<result name="success">/WEB-INF/manager/globalsettings.jsp</result>
+		</action>
+		<action name="manageAllProduct" class="com.pindian.lonphy.action.ManagerAction"
+			method="manageAllProduct">
+			<result name="success">/WEB-INF/manager/salingproduct.jsp</result>
+		</action>
+		<action name="putOn" class="com.pindian.lonphy.action.ProductAction"
+			method="putOn">
+			<result name="success" type="redirectAction">
+				<param name="actionName">manageAllProduct</param>
+				<param name="page">1</param>
+				<param name="type">0</param>
+			</result>
+		</action>
+		<action name="pullOff" class="com.pindian.lonphy.action.ProductAction"
+			method="pullOff">
+			<result name="success" type="redirectAction">
+				<param name="actionName">manageAllProduct</param>
+				<param name="page">1</param>
+				<param name="type">0</param>
+			</result>
+		</action>
+		<action name="saveWeight" class="com.pindian.lonphy.action.ProductAction"
+			method="saveWeight">
+			<result name="success" type="redirectAction">
+				<param name="actionName">manageAllProduct</param>
+				<param name="page">1</param>
+				<param name="type">0</param>
+			</result>
+		</action>
+		<action name="modifyProductView" class="com.pindian.lonphy.action.ProductAction"
+			method="modifyProductView">
+			<result name="success">/WEB-INF/manager/modifyProduct.jsp</result>
+		</action>
+		<action name="updateProduct" class="com.pindian.lonphy.action.ProductAction"
+			method="updateProduct">
+			<result name="success" type="redirectAction">
+				<param name="actionName">manageAllProduct</param>
+				<param name="page">1</param>
+				<param name="type">0</param>
+			</result>
+		</action>
+		<action name="manageUsers" class="com.pindian.lonphy.action.UserAction"
+			method="manageUsers">
+			<result name="success">/WEB-INF/manager/userlist.jsp</result>
+		</action>
+		<action name="getSomeUserBounsHistory" class="com.pindian.lonphy.action.UserAction"
+			method="getSomeUserBounsHistory">
+			<result name="success">/WEB-INF/manager/userbonusdetail.jsp</result>
+		</action>
+		<action name="getOrderDetail" class="com.pindian.lonphy.action.OrdersAction"
+			method="getOrderDetail">
+			<result name="success">/WEB-INF/manager/managerorderdetail.jsp</result>
+		</action>
+		<action name="confirmSendView" class="com.pindian.lonphy.action.OrdersAction"
+			method="confirmSendView">
+			<result name="success">/WEB-INF/manager/confirmsend.jsp</result>
+		</action>
+		<action name="confirmSend" class="com.pindian.lonphy.action.ValidateAction"
+			method="confirmSend">
+			<result name="success">/WEB-INF/manager/managerorderdetail.jsp</result>
+		</action>
+		<action name="manageUserBriberys" class="com.pindian.lonphy.action.UserAction"
+			method="manageUserBriberys">
+			<result name="success">/WEB-INF/manager/managerbriberydetail.jsp
+			</result>
+		</action>
+		<action name="getCostHistoryOrders" class="com.pindian.lonphy.action.OrdersAction"
+			method="getManagerAllOrders">
+			<result name="success">/WEB-INF/manager/managerusercost.jsp</result>
+		</action>
+		<action name="getUserDetail" class="com.pindian.lonphy.action.UserAction"
+			method="getUserDetail">
+			<result name="success">/WEB-INF/manager/manageruserdetail.jsp</result>
+		</action>
+		<action name="showThisBribery" class="com.pindian.lonphy.action.BriberyMoneyAction"
+			method="showThisBribery">
+			<result name="success" type="redirectAction">showAllBribery</result>
+		</action>
+		<action name="hideThisBribery" class="com.pindian.lonphy.action.BriberyMoneyAction"
+			method="hideThisBribery">
+			<result name="success" type="redirectAction">showAllBribery</result>
+		</action>
+		<action name="showThisPackage" class="com.pindian.lonphy.action.A4packageAction"
+			method="showThisPackage">
+			<result name="success" type="redirectAction">showAllA4package</result>
+		</action>
+		<action name="hideThisPackage" class="com.pindian.lonphy.action.A4packageAction"
+			method="hideThisPackage">
+			<result name="success" type="redirectAction">showAllA4package</result>
+		</action>
+		<action name="jsp_*" class="com.pindian.lonphy.action.ManagerAction"
+			method="execute">
+			<result name="success">/WEB-INF/manager/{1}.jsp</result>
+		</action>
+		<action name="getManagerRoles" class="com.pindian.lonphy.action.ManagerAction"
+			method="getManagerRoles">
+			<result name="success">/WEB-INF/manager/managerole.jsp</result>
+		</action>
+		<action name="addRoleView" class="com.pindian.lonphy.action.ManagerAction"
+			method="addRoleView">
+			<result name="success">/WEB-INF/manager/addrole.jsp</result>
+		</action>
+		<action name="addRole" class="com.pindian.lonphy.action.ManagerAction"
+			method="addRole">
+			<result name="success" type="redirectAction">getManagerRoles</result>
+		</action>
+		<action name="modifyRoleView" class="com.pindian.lonphy.action.ManagerAction"
+			method="modifyRoleView">
+			<result name="success">/WEB-INF/manager/modifyRole.jsp</result>
+		</action>
+		<action name="updateRole" class="com.pindian.lonphy.action.ManagerAction"
+			method="updateRole">
+			<result name="success" type="redirectAction">getManagerRoles</result>
+		</action>
+		<action name="deleteRole" class="com.pindian.lonphy.action.ManagerAction"
+			method="deleteRole">
+			<result name="success" type="redirectAction">getManagerRoles</result>
+		</action>
+		<action name="addManagerView" class="com.pindian.lonphy.action.ManagerAction"
+			method="addManagerView">
+			<result name="success">/WEB-INF/manager/addmanager.jsp
+			</result>
+		</action>
+		<action name="manageManager" class="com.pindian.lonphy.action.ManagerAction"
+			method="manageManager">
+			<result name="success">/WEB-INF/manager/manageManager.jsp</result>
+
+		</action>
+		<action name="addManager" class="com.pindian.lonphy.action.ManagerAction"
+			method="addManager">
+			<result name="success" type="redirectAction">manageManager</result>
+		</action>
+		<action name="modifyManagerView" class="com.pindian.lonphy.action.ManagerAction"
+			method="modifyManagerView">
+			<result name="success">/WEB-INF/manager/modifymanager.jsp</result>
+		</action>
+		<action name="modifyManager" class="com.pindian.lonphy.action.ManagerAction"
+			method="modifyManager">
+			<result name="success" type="redirectAction">manageManager</result>
+		</action>
+		<action name="deleteManager" class="com.pindian.lonphy.action.ManagerAction"
+			method="deleteManager">
+			<result name="success" type="redirectAction">manageManager</result>
+		</action>
+		<action name="addNews" class="com.pindian.lonphy.action.NewsAction"
+			method="addNews">
+			<result name="success" type="redirectAction">manageNews</result>
+		</action>
+		<action name="manageNews" class="com.pindian.lonphy.action.NewsAction"
+			method="manageNews">
+			<result name="success">/WEB-INF/manager/managenews.jsp</result>
+		</action>
+		<action name="modifyNewsView" class="com.pindian.lonphy.action.NewsAction"
+			method="modifyNewsView">
+			<result name="success">/WEB-INF/manager/modifynews.jsp</result>
+		</action>
+		<action name="updateNews" class="com.pindian.lonphy.action.NewsAction"
+			method="updateNews">
+			<result name="success" type="redirectAction">manageNews</result>
+		</action>
+		<action name="deleteNews" class="com.pindian.lonphy.action.NewsAction"
+			method="deleteNews">
+			<result name="success" type="redirectAction">manageNews</result>
+		</action>
+		<action name="deleteProductById" class="com.pindian.lonphy.action.ProductAction"
+			method="deleteProductById">
+			<result name="success" type="redirectAction">
+				<param name="type">0</param>
+				<param name="page">1</param>
+				<param name="actionName">manageAllProduct</param>
+			</result>
+		</action>
+	</package>
+	<package name="upload" namespace="/upload" extends="parent">
+		<action name="uploadImage" class="com.pindian.lonphy.action.UploadAction"
+			method="uploadImage">
+			<interceptor-ref name="defaultManager"></interceptor-ref>
+			<result name="success">/servlet/JsonResultServlet</result>
+		</action>
+		<action name="uploadFile" class="com.pindian.lonphy.action.UploadAction"
+			method="uploadFile">
+			<result name="success">/servlet/JsonResultServlet</result>
+		</action>
+		<action name="queryProgress" class="com.pindian.lonphy.action.UploadAction"
+			method="queryProgress">
+			<result name="success">/servlet/JsonResultServlet</result>
+		</action>
+	</package>
+	<package name="file" namespace="/file" extends="parent">
+		<action name="get" class="com.pindian.lonphy.action.UploadAction"
+			method="readPdf">
+			<result name="success">/servlet/DocServlet</result>
+		</action>
+		<action name="getByPath" class="com.pindian.lonphy.action.UploadAction"
+			method="getByPath">
+			<result name="success">/servlet/FileServlet</result>
+		</action>
+
+	</package>
+	<package name="image" namespace="/image" extends="parent">
+		<action name="get" class="com.pindian.lonphy.action.UploadAction"
+			method="readImage">
+			<result name="success">/servlet/ImageServlet</result>
+		</action>
+	</package>
+	<package name="product" namespace="/product" extends="parent">
+		<action name="showByLargeType" class="com.pindian.lonphy.action.ProductAction"
+			method="showByLargeType">
+			<result name="success">/WEB-INF/user/product_list.jsp</result>
+		</action>
+		<action name="indexShowByLargeType" class="com.pindian.lonphy.action.ProductAction"
+			method="indexShowByLargeType">
+			<result name="success">/WEB-INF/user/index_products.jsp</result>
+		</action>
+		<action name="detail" class="com.pindian.lonphy.action.ProductAction"
+			method="findProductById">
+			<result name="success">/WEB-INF/user/product_detail.jsp</result>
+		</action>
+		<action name="a4print" class="com.pindian.lonphy.action.ProductAction"
+			method="findProductById">
+			<result name="success">/WEB-INF/user/cloudprint.jsp</result>
+		</action>
+	</package>
+	<package name="cart" namespace="/cart" extends="parent">
+
+		<action name="add" class="com.pindian.lonphy.action.CartAction"
+			method="add">
+			<result name="success">/WEB-INF/user/cart.jsp</result>
+		</action>
+		<action name="delete" class="com.pindian.lonphy.action.CartAction"
+			method="delete">
+			<result name="success">/WEB-INF/user/cart.jsp</result>
+		</action>
+		<action name="generateOrder" class="com.pindian.lonphy.action.CartAction"
+			method="generateOrder">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/fillorder.jsp</result>
+			<result name="newaddress" type="chain">
+				<param name="actionName">newAddressView</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
+		<action name="buyNow" class="com.pindian.lonphy.action.CartAction"
+			method="buyNow">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/fillorder.jsp</result>
+			<result name="newaddress" type="chain">
+				<param name="actionName">newAddressView</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
+	</package>
+	<package name="address" namespace="/address" extends="parent">
+		<default-interceptor-ref name="defaultWithLogin"></default-interceptor-ref>
+		<action name="getAll" class="com.pindian.lonphy.action.AddressAction"
+			method="getAll">
+
+			<result name="success">/WEB-INF/user/useraddress.jsp</result>
+		</action>
+		<action name="add" class="com.pindian.lonphy.action.AddressAction"
+			method="add">
+			<result name="success" type="redirect">
+				/address/getAll
+			</result>
+			<result name="middleperson" type="dispatcher">/middleperson.jsp</result>
+		</action>
+		<action name="modify" class="com.pindian.lonphy.action.AddressAction"
+			method="modify">
+			<result name="success" type="redirect">
+				/address/getAll
+			</result>
+		</action>
+		<action name="delete" class="com.pindian.lonphy.action.AddressAction"
+			method="delete">
+			<result name="success" type="redirect">/address/getAll</result>
+		</action>
+	</package>
+	<package name="order" namespace="/order" extends="parent">
+		<action name="newOrder" class="com.pindian.lonphy.action.OrdersAction"
+			method="newOrder">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/servlet/JsonResultServlet</result>
+		</action>
+		<action name="getUserOrders" class="com.pindian.lonphy.action.OrdersAction"
+			method="getUserOrders">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/userorders.jsp</result>
+		</action>
+		<action name="showUserOrders" class="com.pindian.lonphy.action.OrdersAction"
+			method="getUserOrders">
+			<param name="type">5</param>
+			<param name="page">1</param>
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/userorders.jsp</result>
+		</action>
+		<action name="getOrderDetail" class="com.pindian.lonphy.action.OrdersAction"
+			method="getOrderDetail">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/orderdetail.jsp</result>
+		</action>
+		<action name="getLastestOrderDetail" class="com.pindian.lonphy.action.OrdersAction"
+			method="getLastestOrderDetail">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/orderdetail.jsp</result>
+		</action>
+		<action name="payByOrderId" class="com.pindian.lonphy.action.OrdersAction"
+			method="payByOrderId">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/alipay.jsp</result>
+		</action>
+		<action name="repay" class="com.pindian.lonphy.action.OrdersAction"
+			method="repay">
+			<interceptor-ref name="defaultWithLogin"></interceptor-ref>
+			<result name="success">/WEB-INF/user/alipay.jsp</result>
+		</action>
+	</package>
+	<package name="alipay" extends="parent" namespace="/alipay">
+		<action name="returnUrl" method="returnUrl"
+			class="com.pindian.lonphy.action.ValidateAction">
+			<result name="success">/WEB-INF/user/buysuccess.jsp</result>
+			<result name="fail">/WEB-INF/user/buyfail.jsp</result>
+		</action>
+		<action name="notify" method="notifyUrl"
+			class="com.pindian.lonphy.action.ValidateAction">
+			<result name="success">/servlet/JsonResultServlet</result>
+		</action>
+	</package>
+	<package name="news" extends="parent" namespace="/news">
+		<action name="getSumNews" class="com.pindian.lonphy.action.NewsAction"
+			method="getSumNews">
+			<result name="success">/WEB-INF/user/news.jsp</result>
+		</action>
+		<action name="getDetail" class="com.pindian.lonphy.action.NewsAction"
+			method="getDetail">
+			<result name="success">/WEB-INF/user/newsdetail.jsp</result>
+		</action>
+	</package>
+</struts>    

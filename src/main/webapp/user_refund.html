@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>用户退款</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/user_refund.css"/>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script src="js/user_refund.js"></script>
+	</head>
+	<body>
+		<div class="notice">
+			<img src="images/sound.png"/>
+			<p>
+				购物奖励品点积分，订单状态为“已完成”后的24小时内，品点积分解冻，即可在下次购物时抵现。
+				<br />
+				<span>温馨提示：参加满减优惠活动的订单，满减优惠金额按比例（商品单价/订单金额）分摊到每个商品上；使用优惠券的订单如产生退货，
+					优惠券均不退回；退货金额以小计为准。</span>
+			</p>
+		</div>
+		<div class="refund_product_list_button">
+			<p>
+				退款/退货商品▼
+			</p>
+		</div>
+		<div class="refund_product_list">
+			<table>
+				<tr>
+					<td><img src="images/test3.jpg"/></td>
+					<td><p>个性行李牌</p></td>
+					<td><p>x<span>100个</span></p></td>
+					<td><p>￥305.00</p></td>
+					<td><p>订单号:123456897</p></td>
+					<td><p><span><a href="#">退款</a></span></p></td>
+				</tr>
+			</table>
+		</div>
+		<div class="refund_infos">
+			<div class="refund_left">
+				<ul>
+					<li><hr/></li>
+					<li><p class="red_color">退款/退货商品</p></li>
+					<li><hr/></li>
+					<li>
+						<table>
+							<tr>
+								<td><img src="images/test3.jpg"/></td>
+								<td><p>纪念画册 <br /> A4　36页 　精装</p></li></td>
+							</tr>
+						</table>
+					<li><hr/></li>
+					<li><p class="red_color">订单信息</p></li>
+					<li><hr/></li>
+					<li><p>订单编号：20151234566</p></li>
+					<li><p>成交时间：2015-07-29 18:05</p></li>
+					<li><p>单价：888元 X1（数量）</p></li>
+					<li><p>小计：888元</p></li>
+					<li><p>总计：898元</p></li>
+				</ul>
+			</div>
+			<div class="refund_right">
+				<form>
+				<table>
+					<tr>
+						<td>退款原因：</td>
+						<td><textarea name="reason" cols="50" rows="5"></textarea></td>
+					</tr>
+					<tr>
+						<td>退款金额：</td>
+						<td><input type="text" name="money"/>　　最多？？元（商品价格的80%）</td>
+					</tr>
+					<tr>
+						<td>上传凭证：</td>
+						<td><input type="file" name="images"/></td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td><p class="gray_color">每张图片大小不超过5M  最多三张  支持gif、jpg、png、bmp</p></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="submit" value="提交退款申请"/>
+						</td>
+					</tr>
+				</table>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
+

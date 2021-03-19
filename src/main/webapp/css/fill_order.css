@@ -1,0 +1,232 @@
+.title{
+	color:black;
+	font-size:1.6em;
+	font-weight:500;
+	margin-top:30px;
+	display:block;
+	float:left;
+}
+.order{
+	background-color:white;	
+	display:block;
+	padding:15px;
+	float:left;
+	margin-top:20px;
+	margin-bottom:50px;
+}
+.order_info{
+	clear:both;
+	border:3px solid #adaba7;
+	padding:10px;
+	float:left;
+	background-color:white;
+	margin-top:20px;
+}
+.order_info p, .order_info a{
+	background-color:white;
+}
+.subtitle{
+	color:black;
+	font-size:1.4em;
+	display:block;
+	float:left;
+	clear:left;
+}
+.new_address{
+	float:right;
+	display:block;
+	margin-right:30px;
+	text-decoration: none;
+	color:#094ba4;
+}
+.addresses, .pay_types{
+	margin-top:20px;
+	display:block;
+	clear:left;
+	float:left;
+	background-color:white;
+}
+.red_box{
+	 margin-top:10px;
+}
+.dotted_line{
+	float:left;
+	width:1000px;
+	background-color:white;
+}
+.product_desc{
+	float:left;
+	display:block;
+	clear:left;
+	margin-top:10px;
+	margin-left:30px;
+}
+.transports{
+	float:left;
+	display:block;
+	clear:left;
+	background-color:white;
+}
+.normal_price{
+	background-color:white;
+}
+.list_left{
+	float:left;
+	background-color:white;
+}
+.list_right{
+	float:right;
+	background-color:white;
+}
+.buying_product{
+	clear:both;
+	display:block;
+	float:left;
+	background-color:#dbfaff;
+	margin-right:20px;
+	margin-top:20px;
+	
+}
+.buying_product p{
+	background-color:#dbfaff;
+}
+.buying_product a{
+	background-color:#dbfaff;
+}
+.buying_product img{
+	width:80px;
+	height:80px;
+}
+table{
+	border-spacing: 10px;
+	float:right;
+}
+.total_price_detail{
+	margin-top:30px;
+	margin-right:30px;
+}
+.total_price{
+	float:right;
+	display:block;
+	margin-top:30px;
+}
+input[type=submit]{
+	margin-top:30px;
+	float:right;
+	margin-right:40px;
+	margin-left:20px;
+	clear:left;
+	clear:right;
+}
+.receive_address{
+	color:#282f35;
+	float:right;
+	font-size:0.9em;
+	margin-top:30px;
+	text-align:right;
+	margin-bottom:50px;
+}
+textarea{
+	width:100%;
+	height:80px;
+	border:3px solid #adaba7;
+	font-size:1.4em;
+}
+.comment {
+	display:block;
+	float:left;
+	margin-bottom:10px;
+	margin-left:20px;
+	padding-top:20px;
+}
+.get_bonus{
+	display:block;
+	float:right;
+	text-align:right;
+	margin-right:20px;
+}
+.shadow {
+	width:100%;
+	height:100%;
+	background-color:#000000;
+	opacity: 0.7;
+	filter:alpha(opacity=70);
+	position:absolute;
+	top:0;
+	z-index:3;
+	display:none; 
+}
+.dialog {
+	z-index:4;
+	position:absolute;
+	padding:30px;
+	width:400px;
+	height:250px;
+	border:5px solid #adadad;
+	background-color:white;
+	border-radius:10px;
+	display:none; 
+	opacity: 1;
+}
+.counterblock{
+	margin-top:30px;
+}
+.choice{
+	margin-top:50px;
+	width:380px;
+	display:block;
+	padding:5px;
+	margin-left:50px;
+}
+.choice p{
+	display:block;
+	float:left;
+}
+.choice img{
+	clear:left;
+	display:block;
+	float:left;
+	width:25px;
+	height:25px;
+}
+.dialog span{
+	color:#da251c;
+}
+.close{
+	float:right;
+	margin:-15px;
+	cursor:pointer;
+}
+.complete{
+	color:#094ba4;
+	font-size:1.1em;
+	text-decoration:none;
+	font-weight:600;
+}
+.repay{
+	font-weight:600;
+	text-decoration:none;
+	font-size:1.1em;
+	color:#da251c;
+}
+.title span{
+	color:#da251c;
+}
+.title a{
+	margin-left:10px;
+}
+.title a span{
+	padding:5px;
+	background-color:#da251c;
+	color:white;	
+}
+.title a img{
+	margin-bottom:-5px;
+}
+a{
+	text-decoration:none;
+}
+.itemdesc{
+	margin:10px;
+	margin-left:20px;
+}

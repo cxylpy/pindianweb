@@ -1,0 +1,161 @@
+.blocks_container {
+	background-color: white;
+	float: left;
+	width: 100%;
+	margin-top: 35px;
+	padding: 10px;
+}
+.blocks_container * {
+	float: left;
+	display: block;
+}
+
+.blocks_container div {
+	margin: 4px;
+}
+.campus_product, .DMPaper, .banner_flag, .post, .cloud_print {
+	color: white;
+	font-size: 1.6em;
+	font-weight: 700;
+}
+.campus_product p+ p {
+	margin-top: 0;
+}
+.campus_product, .DMPaper, .banner_flag {
+	background-color: #DA251C;
+}
+.dark_gray_block, .post {
+	background-color: #282f35;
+}
+.light_gray_block {
+	background-color: #626262;
+	width: 165px;
+	height: 165px;
+}
+.dark_gray_block {
+	width: 165px;
+	height: 165px;
+	float: right;
+}
+.campus_product {
+	width: 330px;
+	height: 330px;
+}
+.campus_product p {
+	margin-top: 140px;
+	margin-left: 100px;
+}
+.post {
+	width: 330px;
+	height: 165px;
+}
+.post p {
+	margin-left: 50px;
+	margin-top: 40px;
+	margin-right: 200px;
+}
+.post p+ p {
+	margin-top: 10px;
+}
+.banner_flag {
+	width: 330px;
+	height: 165px;
+}
+.banner_flag p {
+	margin-top: 70px;
+	margin-left: 200px;
+}
+.banner_flag p+ p {
+	margin-top: 0;
+	margin-left: 300px;
+}
+.DMPaper {
+	width: 330px;
+	height: 165px;
+}
+.DMPaper p {
+	margin-left: 230px;
+	margin-top: 20px;
+}
+.DMPaper p+ p {
+	margin-left: 280px;
+	margin-top: 0px;
+}
+.cloud_print {
+	background-color: #939393;
+	width: 330px;
+	height: 330px;
+	display:block;
+	float: right;
+	padding-top: 8px;
+}
+.cloud_print p {
+	margin-top: 120px;
+	margin-left: 100px;
+}
+.cloud_print p+ p {
+	margin-top: 5px;
+}
+.center_logo {
+	width: 330px;
+	height: 165px;
+}
+.center_logo img {
+	margin-left: 45px;
+	margin-top: 35px;
+}
+iframe{
+	width:105%;
+	border:none;
+	margin-left:-10px;
+	height:900px;
+	margin-top:10px;
+}
+.right{
+	display:block;
+	float:right;
+}
+.largeType{
+	height:900px;
+	display:block;
+	float:left;
+}
+.left_ad{
+	float:left;
+	clear:left;
+	width:120px;
+	height:120px;
+	margin-top:5%;
+}
+.right_ad{
+	margin-top:5%;
+	width:120px;
+	float:right;
+	height:120px;
+}
+.left_ad img, .right_ad img{
+	width:120px;
+	height:120px;
+}
+#side_navi{
+	position:fixed;
+	top:50%;
+	left:1%;
+	display:none;
+	z-index:100;
+}
+#side_navi a{
+	padding:3px 5px 3px 5px;
+	width:130px;
+	text-decoration:none;
+	color:white;
+	display:block;
+	float:left;
+	clear:both;
+	background-color:#da251c;
+}
+a#side_navi_first{
+	background-color:#282f35;
+	text-align:center;
+	font-size:1.3em;
+}

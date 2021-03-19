@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="addresses" catalog="pindian"></table>
+	<table name="user" catalog="pindian">
+		<primary-key>
+			<generator class="uuid.string"></generator>
+		</primary-key>
+	</table>
+	<table name="product" catalog="pindian">
+		<primary-key>
+			<generator class="uuid.string"></generator>
+		</primary-key>
+	</table>
+<table name="orders" catalog="pindian">
+	<primary-key>
+		<generator class="uuid.string"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>
